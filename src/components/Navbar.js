@@ -3,7 +3,7 @@ import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggle from './LanguageToggle';
-import Certificates from './Certificates';
+import Certificates from './Certificates_OLD';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -39,6 +39,7 @@ const Navbar = () => {
         </button>
 
         <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
+          <Certificates></Certificates>
           <button onClick={() => scrollToSection('about')} className="nav-link">
             {t.nav.about}
           </button>

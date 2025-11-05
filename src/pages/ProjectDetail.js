@@ -18,11 +18,14 @@ const ProjectDetail = () => {
     return (
       <div className="project-not-found">
         <h2>Project not found</h2>
-        <button onClick={() => navigate('/')} className="back-btn">
-          <ArrowLeft size={20} />
-          {t.projects.backToHome}
-        </button>
-      </div>
+            <button
+              onClick={() => navigate('/#projects')}
+              className="back-btn"
+            >
+              <ArrowLeft size={20} />
+              {t.projects.backToHome}
+            </button>
+        </div>
     );
   }
 
@@ -41,11 +44,13 @@ const ProjectDetail = () => {
   return (
     <div className="project-detail-page">
       <div className="project-detail-container">
-        <button onClick={() => navigate('/')} className="back-btn">
-          <ArrowLeft size={20} />
-          {t.projects.backToHome}
-        </button>
-
+          <button
+            onClick={() => navigate('/#projects')}
+            className="back-btn"
+          >
+            <ArrowLeft size={20} />
+            {t.projects.backToHome}
+          </button>
         <div className="project-detail-content">
           <div className="project-gallery">
             <div className="gallery-main">
