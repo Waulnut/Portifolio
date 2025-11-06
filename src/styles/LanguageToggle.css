@@ -1,0 +1,125 @@
+.language-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-track {
+  width: 72px;
+  height: 35px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.15),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .toggle-track {
+  background: linear-gradient(145deg, #1a3a5a, #0d2847);
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(100, 255, 218, 0.15);
+}
+
+.toggle-thumb {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.toggle-track.active-en .toggle-thumb {
+  left: 2px;
+}
+
+.toggle-track.active-pt .toggle-thumb {
+  left: 40px;
+}
+
+.flag-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.language-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.label-left,
+.label-right {
+  transition: color 0.3s ease;
+}
+
+.toggle-track.active-en ~ .language-labels .label-left {
+  color: var(--accent-color);
+}
+
+.toggle-track.active-pt ~ .language-labels .label-right {
+  color: var(--accent-color);
+}
+
+.language-toggle:hover .toggle-thumb {
+  box-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.25),
+    0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .toggle-track {
+    width: 60px;
+    height: 28px;
+  }
+
+  .toggle-thumb {
+    width: 24px;
+    height: 24px;
+  }
+
+  .toggle-track.active-pt .toggle-thumb {
+    left: 34px;
+  }
+
+  .flag-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .language-labels {
+    width: 60px;
+    font-size: 0.7rem;
+  }
+}
