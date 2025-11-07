@@ -211,7 +211,7 @@ export const translations = {
           technologies: ['Power BI', 'SQL', 'Excel'],
           shortDescription: 'Dashboard interativo analisando desempenho de vendas por região',
           fullDescription: 'Dashboard abrangente de análise de vendas que fornece insights em tempo real sobre tendências de receita, desempenho regional e comportamento do cliente. O projeto envolveu limpeza, transformação e visualização de dados para ajudar stakeholders a tomar decisões informadas. Métricas principais incluem crescimento de vendas, retenção de clientes e desempenho de produtos.',
-          images: ['https://placehold.co/800x500/1e3a8a/64FFDA?text=Dashboard+de+Vendas'],
+          images: ['/assets/img/teste.png', '/assets/img/teste.png', '/assets/img/teste.png'],
           liveLink: 'https://github.com'
         },
         {
