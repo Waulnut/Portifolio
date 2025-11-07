@@ -25,7 +25,7 @@ const LanguageToggle = () => {
                   <rect x="0" y="20.7" width="30" height="2.3" fill="#FFF"/>
                   <rect x="0" y="25.3" width="30" height="2.3" fill="#FFF"/>
                 </g>
-                <rect x="0" y="0" width="12" height="20" fill="#3C3B6E"/>
+                <rect x="0" y="0" width="12" height="13" fill="#3C3B6E"/>
               </svg>
             ) : (
               <svg viewBox="0 0 30 30" className="flag-icon">
