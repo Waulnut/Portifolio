@@ -6,6 +6,7 @@ import '../styles/Certificates.css';
 const Certificates = () => {
   const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedCert, setSelectedCert] = useState(null);
 
   const certificates = t.certificates.items;
 
@@ -59,6 +60,7 @@ const Certificates = () => {
               <div 
                 key={index} 
                 className="certificate-card"
+                onClick={() => setSelectedCert(cert)} 
                 data-testid={`certificate-card-${index}`}
               >
                 <div className="certificate-image">
@@ -81,8 +83,40 @@ const Certificates = () => {
           </div>
         </div>
       </div>
-    </div>
+
+      {/* FULLSCREEN MODAL — COLOCADO NO LUGAR CORRETO */}
+      {selectedCert && (
+        <div 
+          className="certificate-modal" 
+          onClick={() => setSelectedCert(null)}
+        >
+          <div 
+            className="certificate-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              className="certificate-modal-close"
+              onClick={() => setSelectedCert(null)}
+            >
+              <X size={28} />
+            </button>
+
+            <img 
+              src={selectedCert.image}
+              alt={selectedCert.title}
+              className="certificate-modal-image"
+            />
+
+            <p className="certificate-modal-title">{selectedCert.title}</p>
+            <p className="certificate-modal-issuer">{selectedCert.issuer}</p>
+            <span className="certificate-modal-date">{selectedCert.date}</span>
+          </div>
+        </div>
+      )}
+
+    </div> 
   );
 };
+
 
 export default Certificates;
